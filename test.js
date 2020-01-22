@@ -1,18 +1,11 @@
-const name='abhi'
- name='tanu'
- name='sony'
-function test(){
-    for(var index=0;index<5;index++){
- console.log('index:'+index)
-// var name='rama'
+// function add(p:string,q:string):string
 // {
-//     var name='krishna'
+//     return p+q;
 // }
-// console.log('name:'+name);
-// }
-console.log('index:'+index);
-    }
-    console.log('name:'+name);
+function add(a, b) {
+    return a + b;
 }
-
-test()
+var concat = add("Hello ", "abhi");
+console.log(concat);
+var sum = add(10, 20);
+console.log(sum);
