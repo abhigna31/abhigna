@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+    <div lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    </head>
+    <body>
+      <header class="header  p-3 container">
+        <nav class="navbar navbar-expand-sm bg-light justify-content-center"></nav>
+        <nav class="navbar navbar-expand navbar-light bg-light fixed-top">
+
+            <a class="navbar-brand" href="">
+    
+            <div class="">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"></li>
+                        <a href="adminhome.html" class="nav-link" button type="button" class="btn btn-outline-primary">Home</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="registration form.html" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link text-danger float-right">Logout</a>
+
+                        <form class="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav>
+    </form>
+    <div class="jumbotron jumbotron-fluid">
+      <header class="header  p-5 container">
+       
+    <H1>REGISTRATION FORM</H1><BR>
+    <DIV class="container">
+    <fieldset>
+        <div class="form-group row">
+        <div class="col-sm-5">
+          <h3>USERNAME</h3>
+          <input type="USERNAME" class="form-control" id="inputEmail3" placeholder="USERNAME">
+        </div>
+      </div>
+    <div class="form-group row">
+      <div class="col-sm-5">
+        <h3>EMAIL-ID</h3>
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-5">
+        <h3>PASSWORD</h3>
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password"><br>
+        <input type="confirm password" class="form-control" id="inputPassword3" placeholder="confirm password">
+      </div>
+    </div>
+    <div class="col-sm-5">
+        <h3>MOBILE NUMBER</h3>
+        <input type="MOBILE NUMBER" class="form-control" id="inputEmail3" placeholder="MOBILE NUMBER">
+      </div>
+    </div><BR>
+    
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">REGISTER NOW</button><br>
+      </div><BR>
+    </div>
+    </fieldset>
+    </DIV>
+    </form>
+    </header>
+    </div>
+    <style type="text/css">
+    
+    body {
+        margin:10px 0px; padding:0px;
+        text-align:center;
+    }  
+    </body>
