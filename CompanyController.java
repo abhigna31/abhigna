@@ -20,7 +20,7 @@ public class CompanyController {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		Company company=new Company(123, "CTS", "IT", "BrianHamphires","abhi", 120000000.00);
+		Company company=new Company(123, "CTS", "IT", "BrianHamphires","abhi", 120000.00);
 		CompanyDAO companyDAO= new CompanyDAOImpl();
 		boolean status=companyDAO.saveCompany(company);
 		if(status) {
