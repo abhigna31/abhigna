@@ -1,23 +1,15 @@
-package com.cts.training.model;
-
-import 
-
-public class Usercontroller {
-	public static void main (String []args) {
-		configuration cfg=new configuration();
-		cfg.configure();
-		
-		SessionFactory sessionFactory=cfg.buildSessionfactory();
-		cfg.configure();
-		
-		SessionFactory sessionFactory=cfg.buildSessionFactory();
-		Session session=SesionFactory.openSession();
-		Transaction transaction=sesion.beginTransaction();
-		
-		User user=new User(101,"user",user@123q	a,user@cts.com,75764,false);
-		
-		sesion.save(user);
-				
+package com.cts.training.controller;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import com.cts.training.model.UserEntity;
+public class UserController
+{
+	public static void main(String[] args)
+	{
+		BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
+		UserEntity entity=(UserEntity)beanFactory.getBean("user");
+		System.out.println(entity);
+		System.out.println(entity.getEmail()+"  :  " +entity.getPhone());
 	}
-
 }
