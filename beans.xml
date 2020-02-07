@@ -10,6 +10,26 @@
 <property name="phone" value="107564"/>
 <property name="enabled" value="true"/>
 
+<property name="address">
+<bean name="address" class= "com.cts.training.model.AddressEntity">
+<property name="id" value="1001"/>
+<property name="houseNumber" value="f124"></property>
+<property name="city" value="hyd"></property>
+<property name="state" value="telangana"/>
+<property name="street" value="street 6"/>
+
+
+</bean>
+</property>
+
+
+<!-- <constructor-arg value="102" name="id" type="int"/>
+<constructor-arg value="user" name="username"/>
+<constructor-arg value="user@gmail.com" name="email"/>
+<constructor-arg value="abhi" name="password"/>
+<constructor-arg value="75654" name="phone"/>
+<constructor-arg value="true" name="enabled"/> 
+ --> 
 
 </bean>
 
