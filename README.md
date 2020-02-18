@@ -14,3 +14,13 @@ Day 40(17-02-2020)
 ->Data authentication from database using spring
 ->SQL concepts
 
+
+Day 41(18-2-2020)
+->SQL concepts
+->PLSQL
+     ->views
+     ->procedures
+     ->functions
+     ->triggers
+    
+
