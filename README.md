@@ -33,6 +33,10 @@ Day 41(18-2-2020)
  Day 44(21-2-2020)
  ->Spring boot security
  
+ Day 45(22-2-2020)
+ ->spring and angular connection
+ 
+ 
  
     
 
