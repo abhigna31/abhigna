@@ -27,7 +27,7 @@ public class CompanyRestServiceController {
 	public List<Company> findAll(){
 		return rr.findAll();
 	}
-	@RequestMapping(value="/company/{id}", method= RequestMethod.GET,produces = MediaType.APPLICATION_XML_VALUE)
+	@RequestMapping(value="/company/{id}", method= RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public Company findone(@PathVariable int id){
 		Optional<Company> com = rr.findById(id);
 		Company r = com.get();
@@ -44,6 +44,7 @@ public class CompanyRestServiceController {
 	}
 	@RequestMapping(value = "/company", method = RequestMethod.PUT)
 	public Company update(@RequestBody Company com) {
+		System.out.println("company:: "+com.getName()+"  "+com.getCeo());
 		Company company = rr.save(com);
 		return company;
 	}
