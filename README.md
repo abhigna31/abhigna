@@ -39,6 +39,12 @@ Day 41(18-2-2020)
  Day 46(24-2-2020)
  ->project work
  
+ Day 49(27-2-2020)
+ ->spring actuators
+ ->spring profiles
+ ->email activation in angular
+ 
+ 
  
     
 
