@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="updateUser">
+    
+          <h1> REGISTRATION PAGE</h1>
+          <div class="form-group">
+            <label for="id">id :</label>
+              <input type="text"  class="form-control" placeholder="enter id" formControlName="id" id="id">
+        
+              <label for="name">Username :</label>
+              <input type="text"  class="form-control" placeholder="enter username" formControlName="username" id="id">
+          </div>
+          <div class="form-group">
+            <label for="firstname">Firstname :</label>
+            <input type="text"  class="form-control" placeholder="enter fisrtname" formControlName="firstname" id="firstname">
+            <label for="lastname">Lastname :</label>
+            <input type="text"  class="form-control" placeholder="enter lastname" formControlName="lastname" id="lastname">
+              <label for="lastname">Email ID :</label>
+              <input type="text" id="email" class="form-control" placeholder="enter valid email id" formControlName="email">
+              <br>
+              <label for="Phone">Phone no :</label>
+              <input type="number" id="Phone" class="form-control" placeholder="enter valid phonenumber">
+              <label for="Password">Password :</label>
+              <input type="password" id="password" class="form-control" placeholder="password">
+              <br>
+                <button class="btn btn-info" (click)="updateTheUser()" [disabled]="!updateUser">Update user</button>
+              
+        </div>
+        
+      </form>
+      <footer class="footer bg-primary p-3 container-fluid">
+      
+      
+    </footer>
+
+
+    </div>

@@ -1,0 +1,48 @@
+
+    <header style="color: green;" class="text-center font-weight-bold"><h1>Admin Landing Page</h1></header>
+    <div id="body" class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-5 my-3">
+                
+                <div class="card my-card border border-curved text-center btn btn-outline-success" (click)=importdata()>
+                    
+                    <div class="card-body">
+                        <h4 class="card-title display-5">Import Data</h4>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="col-5 my-3">
+                
+                <div class="card my-card border border-curved text-center btn btn-outline-success" (click)=companydet()>
+                    <div class="card-body">
+                        <h4 class="card-title display-5">Company Details</h4>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-5 my-3">
+                
+                <div class="card my-card border border-curved text-center btn btn-outline-success" (click)=stockEx()>
+                    <div class="card-body">
+                        <h4 class="card-title display-5">Stock Exchanges</h4>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-5 my-3">
+                
+                <div class="card my-card border border-curved text-center btn btn-outline-success" (click)=ipodet()>
+                    <div class="card-body">
+                        <h4 class="card-title display-5">IPO Details</h4>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<router-outlet></router-outlet>
+    

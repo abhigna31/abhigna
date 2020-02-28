@@ -1,0 +1,22 @@
+{
+    "company": [
+      {
+        "id": 1,
+        "sector": "IT",
+        "companyname": "INFOSYS",
+        "ceo": "NARAYANAMURTHY",
+        "bod": "ABHI",
+        "stockList": "BSE",
+        "turnover": 300000
+      },
+      {
+        "id": 2,
+        "sector": "IT",
+        "companyname": "COGNIZANT",
+        "ceo": "BRIAN HUMPRIES",
+        "bod": "ABHIGNA",
+        "stockList": "BSE",
+        "turnover": 500000
+      }
+    ]
+  }

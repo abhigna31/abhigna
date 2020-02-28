@@ -1,0 +1,27 @@
+<div id="body" class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <form [formGroup]="addipo" (ngSubmit)="onSubmit()">
+            <h1  class="text-center">ADD IPO</h1><br> >
+
+            <label for="id">Company id:</label>
+            <input type="number" class="form-control" placeholder="Enter id" formControlName="id" id="id">
+            <label for="companyname">Company Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Company" formControlName="companyname"id="companyname">
+            <label for="stockexchange">Stock Exchange:</label>
+            <input type="text" class="form-control" placeholder="Enter Company" formControlName="stockexchange" id="stockexchange">
+            <label for="ppshare">Price per Share:</label>
+              <input type="number" class="form-control" placeholder="Price in Rupees" formControlName="ppshare" id="ppshare">
+            <label for="shares">No. of Shares:</label>
+            <input type="number" class="form-control" placeholder="Total Number of Shares" formControlName="shares" id="shares">
+            <label for="datetime">Open Date-Time:</label><br>
+            <input class="form-control" type="text" name="datetime" id="datetime" formControlName="datetime">
+            <label for="remarks">Remarks:</label>
+            <textarea class="form-control mb-4" name="remarks" id="remarks" cols="30" rows="3" placeholder="Remarks about this IPO"
+            formControlName="remarks"></textarea>
+            <button class="btn btn-primary text-dark text-center form-control" (click)="addTheIpo()" [disabled]="!addipo.valid">Add IPO</button>
+          </form>
+        </div>
+    </div>
+</div>
