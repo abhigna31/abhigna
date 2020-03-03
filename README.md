@@ -44,6 +44,18 @@ Day 41(18-2-2020)
  ->spring profiles
  ->email activation in angular
  
+ Day(01-03-2020)
+ ->Codesprint(Hakathon)
+ 
+ Day 52(02-03-2020)
+ ->Microservices for project
+ 
+ Day-53(03-03-2020)
+ ->Spring cloud-starter
+ ->Ribbon
+ ->feign basics
+ ->netflix eureka
+ 
  
  
     
