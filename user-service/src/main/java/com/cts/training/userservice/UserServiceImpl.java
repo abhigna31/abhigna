@@ -2,10 +2,13 @@ package com.cts.training.userservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -17,10 +20,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService{
+	
+	Logger logger=LoggerFactory.getLogger(this.getClass());
 
 	
 	@Autowired
-	UserDAO userDao;
+	UserRepo userDao;
 	
 	@Autowired
 	JavaMailSender jms;
@@ -32,20 +37,19 @@ public class UserServiceImpl implements UserService{
 		try {
 			MimeMessage mimeMessage=jms.createMimeMessage();
 			MimeMessageHelper helper=new MimeMessageHelper(mimeMessage,"utf-8");
-			helper.setFrom("hameem28061995@gmail.com");			
+			helper.setFrom("abhignalahiri@gmail.com");			
 			helper.setTo(ud.getEmail());
-			helper.setSubject("Activate");
+			helper.setSubject("verification mail");
 			//sm.setText("This is testing mail");
-			helper.setText("Account created click on <a href='http://localhost:4200/activate?"+u.getEmail()+"'>Click</a>",true);
+			helper.setText("Account created click on <a href='http://localhost:4200/activate?"+ud.getEmail()+"'>Click</a>",true);
 			jms.send(mimeMessage);
+			logger.info("sending mail..");
 			BeanUtils.copyProperties(ud, u);
 			userDao.save(u);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 		
 		return ud;
 	}
@@ -87,6 +91,17 @@ public class UserServiceImpl implements UserService{
 		return userDTO;
 		
 	}
+
+	@Override
+	public UserDTO getUserByusernameAndPassword(String username, String password) throws NoSuchElementException 
+	
+	{
+			User user = userDao.findByUsernameAndPassword(username, password).get();
+			UserDTO userDTO = new UserDTO();
+			BeanUtils.copyProperties(user, userDTO);
+			return userDTO;
+		}
+	}
 	
 	
-}
+

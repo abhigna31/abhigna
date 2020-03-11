@@ -11,5 +11,6 @@ public interface UserService {
 	public UserDTO update(UserDTO pd);
 	public UserDTO getUserById(int id);
 	public void delete(int id);
-
+	public UserDTO getUserByusernameAndPassword(String username, String password);
+	
 }

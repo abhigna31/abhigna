@@ -1,7 +1,13 @@
 package com.cts.training.userservice;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 	
+	
 	@Autowired
 	UserRepo userDao;
 	
@@ -28,6 +35,35 @@ public class UserController {
 	
 	@Autowired
 	JavaMailSender jms;
+	
+	
+	Logger  logger=LoggerFactory.getLogger(this.getClass());
+	
+	@GetMapping("/login")
+	public ResponseEntity<?> login(HttpServletRequest request){
+		String authorization =request.getHeader("Authorization");
+		logger.info("Login attempt with token-->{}",authorization);
+		String username=null;
+		String password=null;
+		if(authorization!=null&&authorization.startsWith("Basic")) {
+			String base64Credentials=authorization.substring("Basic".length()).trim();
+			byte[] credDecoded=Base64.getDecoder().decode(base64Credentials);
+			String credentials=new String(credDecoded,StandardCharsets.UTF_8);
+			username=credentials.split(":")[0];
+			password=credentials.split(":")[1];
+		}
+		try {
+			UserDTO user =us.getUserByusernameAndPassword(username,password);
+			logger.info("User logged in using username-->{}",username);
+			return new ResponseEntity<UserDTO>(user,HttpStatus.OK);
+		}catch(Exception e) {
+			System.out.println(e.getStackTrace());
+			logger.info("Unauthorized access stack Trace-->{}",e.getStackTrace().toString());
+			return new ResponseEntity<String>("no user found",HttpStatus.NOT_FOUND);
+			
+		}
+		
+	}
 	
 
 	@GetMapping("/user/{id}")
@@ -64,13 +100,13 @@ public class UserController {
 	
 	
 //
-	@PutMapping(value="/useractivate")
+	@PutMapping(value="/activate")
 	public String activateUser(@RequestBody String e) {
 		String temp = e.split(":")[1];
 		String email=temp.split("\"")[1];
 		User user = userDao.findByEmail(email);
-		if(user.getActive().equals("no")) {
-			user.setActive("yes");
+		if(user.getActive().equals(false)) {
+			user.setActive(true);
 			userDao.save(user);
 			return "{\"result\":\"1\"}";
 		}
